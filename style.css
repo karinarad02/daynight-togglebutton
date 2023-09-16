@@ -59,33 +59,49 @@ body {
 
 /* styles for the label */
 .button-background {
-	width: 250px;
-	height: 100px;
-	background: var(--blue-color);
+	width: 255px;
+	height: 105px;
+	background: var(--blue-border);
 	border-radius: 100px;
-	border: 3px solid transparent;
-	border-image: var(--blue-border);
-	border-image-slice: 1;
 	display: flex;
 	position: relative;
 	transition: all 350ms ease-in;
 	overflow: hidden;
+	&:before {
+		content: "";
+		transition: all 250ms ease-in;
+		width: 250px;
+		height: 100px;
+		position: absolute;
+		left: 2.5px;
+		top: 2.5px;
+		background: var(--blue-color);
+		border-radius: 100px;
+	}
     /* styles for the sun */
 	.button-circle {
 		animation-name: reverse;
 		animation-duration: 350ms;
 		animation-fill-mode: forwards;
 		transition: all 350ms ease-in;
-		width: 82px;
-		height: 82px;
-		border: 3px solid transparent;
-		border-image: var(--yellow-border);
-		border-image-slice: 1;
-		top: 6%;
+		width: 86px;
+		height: 86px;
 		position: absolute;
+		top: 10%;
 		border-radius: 50%;
-		background: var(--yellow-background);
+		background: var(--yellow-border);
         z-index: 2;
+		&:before{
+			content: "";
+			transition: all 250ms ease-in;
+			width: 82px;
+			height: 82px;
+			position: absolute;
+			left: 2px;
+			top: 2px;
+			border-radius: 50%;
+			background: var(--yellow-background);
+		}
 	}
 	.button-circle-radius{
 		content: "";
@@ -214,10 +230,22 @@ body {
 		border-color: var(--indigo-border);
 		.button-circle {
 			background: var(--white);
-			border-color: var(--gray-border);
 			animation-name: switch;
 			animation-duration: 350ms;
 			animation-fill-mode: forwards;
+			background: var(--gray-border);
+			z-index: 1;
+			&:before{
+				content: "";
+				transition: all 250ms ease-in;
+				width: 82px;
+				height: 82px;
+				left: 2px;
+				top: 2px;
+				position: absolute;
+				border-radius: 50%;
+				background: var(--gray-background);
+			}
 		}
 		.button-circle-radius{
 			left: 52%;
