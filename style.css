@@ -11,7 +11,7 @@
 	--indigo-border: linear-gradient(180deg, rgba(135,172,211,1) 0%, rgba(178,201,227,1) 50%, rgba(226,234,243,1) 100%);
 	--indigo-color: #1c202c;
 	--gray-border: linear-gradient(0deg, rgba(135,172,211,1) 0%, rgba(178,201,227,1) 50%, rgba(226,234,243,1) 100%);
-	--gray-dots: #e8e8ea;
+	--gray-dots: #a9b1c4;
 	--gray-moon-background: #d3d9e2;
 	/** general **/
 	--white: #fff;
@@ -463,7 +463,9 @@ body {
 		transition: all 250ms ease-in;
 		position: absolute;
 		content: "";
-		box-shadow: var(--gray-dots) -13px 0 0 2px, var(--gray-dots) -24px 14px 0 -2px;
+		box-shadow: var(--gray-dots) -25px 20px 0 2px, 
+		var(--gray-dots) -5px 10px 0 -2px,
+		var(--gray-dots) 15px 40px 0 -2px;
 		left: 200px;
 		top: 23px;
 		width: 10px;
