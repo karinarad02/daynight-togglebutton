@@ -10,7 +10,7 @@
 	--indigo-background: #384152;
 	--indigo-border: linear-gradient(180deg, rgba(135,172,211,1) 0%, rgba(178,201,227,1) 50%, rgba(226,234,243,1) 100%);
 	--indigo-color: #1c202c;
-	--gray-border: linear-gradient(0deg, rgba(135,172,211,1) 0%, rgba(178,201,227,1) 50%, rgba(226,234,243,1) 100%);
+	--gray-border: linear-gradient(0deg, rgba(157,166,188,255) 0%, rgba(195,200,212,255) 50%, rgba(226,234,243,1) 100%);
 	--gray-dots: #a9b1c4;
 	--gray-moon-background: #d3d9e2;
 	/** general **/
@@ -508,6 +508,7 @@ body {
 				content: "";
 				transition: all 250ms ease-in;
 				background: var(--gray-moon-background);
+				left: -1px;
 			}
 		}
 		.button-circle-radius{
