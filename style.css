@@ -3,6 +3,7 @@
 	--blue-background: #96dcee;
 	--blue-border: linear-gradient(180deg, rgba(135,172,211,1) 0%, rgba(178,201,227,1) 50%, rgba(226,234,243,1) 100%);
 	--blue-color: #63a5eb;
+	--cloud-blue: #aed5fa;
 	--yellow-background: #f6d329;
 	--yellow-border: linear-gradient(180deg, rgba(252,252,108,1) 0%, rgba(241,154,1,1) 100%); 
 	/** dark side **/
@@ -11,8 +12,11 @@
 	--indigo-color: #1c202c;
 	--gray-border: linear-gradient(0deg, rgba(135,172,211,1) 0%, rgba(178,201,227,1) 50%, rgba(226,234,243,1) 100%);
 	--gray-dots: #e8e8ea;
+	--gray-moon-background: #d3d9e2;
 	/** general **/
 	--white: #fff;
+	--light-blue: #d6ecfc;
+	--shadow: rgba(0, 0, 0, 0.4);
 }
 
 @keyframes reverse {
@@ -57,6 +61,18 @@ body {
 	display: none;
 }
 
+.button-shadow{
+	width: 250px;
+	height: 100px;
+	border-radius: 100px;
+	position: absolute;
+	left: 2.5px;
+	top: 2.5px;
+	box-shadow: inset -5px 5px 10px var(--shadow),
+				inset 5px 5px 10px var(--shadow);
+	z-index: 2;
+}
+
 /* styles for the label */
 .button-background {
 	width: 255px;
@@ -67,6 +83,7 @@ body {
 	position: relative;
 	transition: all 350ms ease-in;
 	overflow: hidden;
+
 	&:before {
 		content: "";
 		transition: all 250ms ease-in;
@@ -92,6 +109,7 @@ body {
 		border-radius: 50%;
 		background: var(--yellow-border);
         z-index: 2;
+		box-shadow: -1px 10px 10px var(--shadow);
 		&:before{
 			content: "";
 			transition: all 250ms ease-in;
@@ -112,7 +130,7 @@ body {
 		top: -10%;
 		position: absolute;
 		border-radius: 50%;
-		background: var(--white);
+		background: var(--light-blue);
 		opacity: 0.2;
 		z-index: 1;
 		&:before{
@@ -123,7 +141,7 @@ body {
 			left: 20%;
 			position: absolute;
 			border-radius: 50%;
-			background: var(--white);
+			background: var(--light-blue);
 			opacity: 0.5;
 		}
 		&:after{
@@ -134,7 +152,7 @@ body {
 			left: 40%;
 			position: absolute;
 			border-radius: 50%;
-			background: var(--white);
+			background: var(--light-blue);
 			opacity: 0.5;
 		}
 	}
@@ -148,13 +166,14 @@ body {
 		top: 2.5px;
 		transition: all 350ms ease-in;
 		overflow: hidden;
+		
 		.button-ornaments {
 			/* clouds 1 */
 			width: 240px;
 			height: 20px;
 			position: relative;
 			top: 86px;
-			background: var(--white);
+			background: var(--light-blue);
 			transition: all 150ms ease-in;
 			&:before {
 				content: "";
@@ -163,7 +182,7 @@ body {
 				width: 30px;
 				height: 70px;
 				border-radius: 50px;
-				background: var(--white);
+				background: var(--light-blue);
 				left: -2%;
 				transition: all 150ms ease-in;
 			}
@@ -174,7 +193,7 @@ body {
 				width: 70px;
 				height: 50px;
 				border-radius: 90px 90px 0 0;
-				background: var(--white);
+				background: var(--light-blue);
 				left: 3%;
 				transition: all 150ms ease-in;
 			}
@@ -193,7 +212,7 @@ body {
 				width: 20px;
 				height: 10px;
 				border-radius: 90px 90px 0 0;
-				background: var(--white);
+				background: var(--light-blue);
 				left: 31%;
 				transition: all 150ms ease-in;
 			}
@@ -204,7 +223,7 @@ body {
 				width: 36px;
 				height: 40px;
 				border-radius: 50px;
-				background: var(--white);
+				background: var(--light-blue);
 				left: 36%;
 				transition: all 150ms ease-in;
 			}
@@ -223,7 +242,7 @@ body {
 				width: 20px;
 				height: 10px;
 				border-radius: 90px 90px 0 0;
-				background: var(--white);
+				background: var(--light-blue);
 				left: 48%;
 				transition: all 150ms ease-in;
 			}
@@ -234,7 +253,7 @@ body {
 				width: 50px;
 				height: 50px;
 				border-radius: 50px;
-				background: var(--white);
+				background: var(--light-blue);
 				left: 54%;
 				transition: all 150ms ease-in;
 			}
@@ -253,7 +272,7 @@ body {
 				width: 20px;
 				height: 30px;
 				border-radius: 90px 90px 0 0;
-				background: var(--white);
+				background: var(--light-blue);
 				left: 70%;
 				transition: all 150ms ease-in;
 			}
@@ -264,7 +283,7 @@ body {
 				width: 36px;
 				height: 52px;
 				border-radius: 50px;
-				background: var(--white);
+				background: var(--light-blue);
 				left: 75%;
 				transition: all 150ms ease-in;
 			}
@@ -283,7 +302,7 @@ body {
 				width: 20px;
 				height: 40px;
 				border-radius: 90px 90px 0 0;
-				background: var(--white);
+				background: var(--light-blue);
 				left: 87%;
 				transition: all 150ms ease-in;
 				transform: rotate(-15deg);
@@ -295,8 +314,143 @@ body {
 				width: 50px;
 				height: 71px;
 				border-radius: 50px;
-				background: var(--white);
+				background: var(--light-blue);
 				left: 90%;
+				transition: all 150ms ease-in;
+				transform: rotate(-10deg);
+			}
+		}
+	}
+
+	.ornament-shadow-container{
+		width: 250px;
+		height: 100px;
+		border-radius: 100px;
+		display: flex;
+		position: absolute;
+		left: 2.5px;
+		top: 2.5px;
+		transition: all 350ms ease-in;
+		overflow: hidden;
+		.button-ornaments {
+			/* clouds 1 */
+			width: 240px;
+			height: 20px;
+			position: relative;
+			top: 86px;
+			background: var(--cloud-blue);
+			transition: all 150ms ease-in;
+			&:before {
+				content: "";
+				position: absolute;
+				top: -70px;
+				width: 30px;
+				height: 70px;
+				border-radius: 50px;
+				background: var(--cloud-blue);
+				left: 1%;
+				transition: all 150ms ease-in;
+			}
+			&:after {
+				content: "";
+				position: absolute;
+				top: -280%;
+				width: 70px;
+				height: 51px;
+				border-radius: 90px 90px 0 0;
+				background: var(--cloud-blue);
+				left: 3.5%;
+				transition: all 150ms ease-in;
+			}
+		}
+		.button-ornaments2 {
+			/* clouds 2 */
+			width: 240px;
+			height: 20px;
+			position: absolute;
+			top: 90%;
+			transition: all 150ms ease-in;
+			&:before {
+				content: "";
+				position: absolute;
+				top: -180%;
+				width: 50px;
+				height: 50px;
+				border-radius: 90px 90px 0 0;
+				background: var(--cloud-blue);
+				left: 22%;
+				transition: all 150ms ease-in;
+			}
+			&:after {
+				content: "";
+				position: absolute;
+				top: -40px;
+				width: 60px;
+				height: 60px;
+				border-radius: 50px;
+				background: var(--cloud-blue);
+				left: 34%;
+				transition: all 150ms ease-in;
+			}
+		}
+		.button-ornaments3 {
+			/* clouds 4 */
+			width: 240px;
+			height: 20px;
+			position: absolute;
+			top: 90%;
+			transition: all 150ms ease-in;
+			&:before {
+				content: "";
+				position: absolute;
+				top: -180%;
+				width: 30px;
+				height: 30px;
+				border-radius: 90px 90px 0 0;
+				background: var(--cloud-blue);
+				left: 56%;
+				transition: all 150ms ease-in;
+			}
+			&:after {
+				content: "";
+				position: absolute;
+				top: -300%;
+				width: 50px;
+				height: 52px;
+				border-radius: 50px;
+				background: var(--cloud-blue);
+				left: 64%;
+				transition: all 150ms ease-in;
+			}
+		}
+		.button-ornaments4 {
+			/* clouds 5 */
+			width: 240px;
+			height: 20px;
+			position: absolute;
+			top: 90%;
+			transition: all 150ms ease-in;
+			&:before {
+				content: "";
+				position: absolute;
+				top: -310%;
+				width: 30px;
+				height: 40px;
+				border-radius: 90px 90px 0 0;
+				background: var(--cloud-blue);
+				left: 80%;
+				transition: all 150ms ease-in;
+				transform: rotate(-15deg);
+			}
+			&:after {
+				content: "";
+				position: absolute;
+				top: -460%;
+				width: 50px;
+				height: 71px;
+				border-radius: 50px;
+				background: var(--cloud-blue);
+				left: 87%;
 				transition: all 150ms ease-in;
 				transform: rotate(-10deg);
 			}
@@ -351,7 +505,7 @@ body {
 			&:before{
 				content: "";
 				transition: all 250ms ease-in;
-				background: var(--white);
+				background: var(--gray-moon-background);
 			}
 		}
 		.button-circle-radius{
@@ -374,6 +528,8 @@ body {
 				top: -38px;
 				left: -42px;
 				border-radius: 50%;
+				background: var(--white);
+
 			}
 			&:after {
 				width: 10px;
@@ -381,9 +537,10 @@ body {
 				top: -70px;
 				left: -10px;
 				background: transparent;
-				background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="0 0 24 24" fill="%23FFFFFF"><path d="M12 3L14.0357 8.16153C14.2236 8.63799 14.3175 8.87622 14.4614 9.0771C14.5889 9.25516 14.7448 9.41106 14.9229 9.53859C15.1238 9.68245 15.362 9.77641 15.8385 9.96432L21 12L15.8385 14.0357C15.362 14.2236 15.1238 14.3175 14.9229 14.4614C14.7448 14.5889 14.5889 14.7448 14.4614 14.9229C14.3175 15.1238 14.2236 15.362 14.0357 15.8385L12 21L9.96432 15.8385C9.77641 15.362 9.68245 9.1238 9.53859 9.0771C9.41106 9.7448 9.25516 9.5889 9.0771 9.4614C8.87622 14.3175 8.63799 14.2236 8.16153 14.0357L3 12L8.16153 9.96432C8.63799 9.77641 8.87622 9.68245 9.0771 9.53859C9.25516 9.41106 9.41106 9.25516 9.53859 9.0771C9.68245 8.87622 9.77641 8.63799 9.96432 8.16153L12 3Z" fill="%23FFFFFF" /></svg>');
+				background-image: url('data:image/svg+xml;charset=UTF-8,<svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M300 1.52588e-05L367.857 172.051C374.12 187.933 377.25 195.874 382.047 202.57C386.297 208.505 391.493 213.702 397.43 217.953C404.127 222.748 412.067 225.88 427.95 232.144L600 300L427.95 367.857C412.067 374.12 404.127 377.25 397.43 382.047C391.493 386.297 386.297 391.493 382.047 397.43C377.25 404.127 374.12 412.067 367.857 427.95L300 600L232.144 427.95C225.88 412.067 222.748 404.127 217.953 397.43C213.702 391.493 208.505 386.297 202.57 382.047C195.874 377.25 187.933 374.12 172.051 367.857L0 300L172.051 232.144C187.933 225.88 195.874 222.748 202.57 217.953C208.505 213.702 213.702 208.505 217.953 202.57C222.748 195.874 225.88 187.933 232.144 172.051L300 1.52588e-05Z" fill="white"/></svg>');
 				background-size: cover;
 				transform: none;
+
 			}
 		}
 		.button-ornaments2 {
@@ -396,6 +553,8 @@ body {
 				top: -10px;
 				left: -10.5px;
 				border-radius: 50%;
+				background: var(--white);
+
 			}
 			&:after {
 				width: 3px;
@@ -403,6 +562,8 @@ body {
 				top: -42px;
 				left: 8px;
 				border-radius: 50%;
+				background: var(--white);
+
 			}
 		}
 		.button-ornaments3 {
@@ -415,6 +576,8 @@ body {
 				top: -70px;
 				left: 36px;
 				border-radius: 50%;
+				background: var(--white);
+
 			}
 			&:after {
 				width: 3px;
@@ -422,6 +585,8 @@ body {
 				top: -30px;
 				left: 36px;
 				border-radius: 50%;
+				background: var(--white);
+
 			}
 		}
 		.button-ornaments4 {
@@ -434,6 +599,8 @@ body {
 				top: -56px;
 				left: 60px;
 				border-radius: 50%;
+				background: var(--white);
+
 			}
 			&:after {
 				width: 10px;
@@ -441,9 +608,10 @@ body {
 				top: -70px;
 				left: 86px;
 				background: transparent;
-				background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="0 0 24 24" fill="%23FFFFFF"><path d="M12 3L14.0357 8.16153C14.2236 8.63799 14.3175 8.87622 14.4614 9.0771C14.5889 9.25516 14.7448 9.41106 14.9229 9.53859C15.1238 9.68245 15.362 9.77641 15.8385 9.96432L21 12L15.8385 14.0357C15.362 14.2236 15.1238 14.3175 14.9229 14.4614C14.7448 14.5889 14.5889 14.7448 14.4614 14.9229C14.3175 15.1238 14.2236 15.362 14.0357 15.8385L12 21L9.96432 15.8385C9.77641 15.362 9.68245 9.1238 9.53859 9.0771C9.41106 9.7448 9.25516 9.5889 9.0771 9.4614C8.87622 14.3175 8.63799 14.2236 8.16153 14.0357L3 12L8.16153 9.96432C8.63799 9.77641 8.87622 9.68245 9.0771 9.53859C9.25516 9.41106 9.41106 9.25516 9.53859 9.0771C9.68245 8.87622 9.77641 8.63799 9.96432 8.16153L12 3Z" fill="%23FFFFFF" /></svg>');
+				background-image: url('data:image/svg+xml;charset=UTF-8,<svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M300 1.52588e-05L367.857 172.051C374.12 187.933 377.25 195.874 382.047 202.57C386.297 208.505 391.493 213.702 397.43 217.953C404.127 222.748 412.067 225.88 427.95 232.144L600 300L427.95 367.857C412.067 374.12 404.127 377.25 397.43 382.047C391.493 386.297 386.297 391.493 382.047 397.43C377.25 404.127 374.12 412.067 367.857 427.95L300 600L232.144 427.95C225.88 412.067 222.748 404.127 217.953 397.43C213.702 391.493 208.505 386.297 202.57 382.047C195.874 377.25 187.933 374.12 172.051 367.857L0 300L172.051 232.144C187.933 225.88 195.874 222.748 202.57 217.953C208.505 213.702 213.702 208.505 217.953 202.57C222.748 195.874 225.88 187.933 232.144 172.051L300 1.52588e-05Z" fill="white"/></svg>');
 				background-size: cover;
 				transform: none;
+
 			}
 		}
 		.button-ornaments5 {
@@ -456,6 +624,8 @@ body {
 				top: -40px;
 				left: 80px;
 				border-radius: 50%;
+				background: var(--white);
+
 			}
 			&:after {
 				width: 10px;
@@ -463,7 +633,7 @@ body {
 				top: -10px;
 				left: 70px;
 				background: transparent;
-				background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="0 0 24 24" fill="%23FFFFFF"><path d="M12 3L14.0357 8.16153C14.2236 8.63799 14.3175 8.87622 14.4614 9.0771C14.5889 9.25516 14.7448 9.41106 14.9229 9.53859C15.1238 9.68245 15.362 9.77641 15.8385 9.96432L21 12L15.8385 14.0357C15.362 14.2236 15.1238 14.3175 14.9229 14.4614C14.7448 14.5889 14.5889 14.7448 14.4614 14.9229C14.3175 15.1238 14.2236 15.362 14.0357 15.8385L12 21L9.96432 15.8385C9.77641 15.362 9.68245 9.1238 9.53859 9.0771C9.41106 9.7448 9.25516 9.5889 9.0771 9.4614C8.87622 14.3175 8.63799 14.2236 8.16153 14.0357L3 12L8.16153 9.96432C8.63799 9.77641 8.87622 9.68245 9.0771 9.53859C9.25516 9.41106 9.41106 9.25516 9.53859 9.0771C9.68245 8.87622 9.77641 8.63799 9.96432 8.16153L12 3Z" fill="%23FFFFFF" /></svg>');
+				background-image: url('data:image/svg+xml;charset=UTF-8,<svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M300 1.52588e-05L367.857 172.051C374.12 187.933 377.25 195.874 382.047 202.57C386.297 208.505 391.493 213.702 397.43 217.953C404.127 222.748 412.067 225.88 427.95 232.144L600 300L427.95 367.857C412.067 374.12 404.127 377.25 397.43 382.047C391.493 386.297 386.297 391.493 382.047 397.43C377.25 404.127 374.12 412.067 367.857 427.95L300 600L232.144 427.95C225.88 412.067 222.748 404.127 217.953 397.43C213.702 391.493 208.505 386.297 202.57 382.047C195.874 377.25 187.933 374.12 172.051 367.857L0 300L172.051 232.144C187.933 225.88 195.874 222.748 202.57 217.953C208.505 213.702 213.702 208.505 217.953 202.57C222.748 195.874 225.88 187.933 232.144 172.051L300 1.52588e-05Z" fill="white"/></svg>');
 				background-size: cover;
 				transform: none;
 			}
