@@ -586,6 +586,7 @@ body {
 		}
 		.button-circle-radius{
 			left: 52%;
+			opacity: 0.3;
 			&:before{
 				left: -20%;
 			}
