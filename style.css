@@ -12,9 +12,11 @@
 	--indigo-color: #1c202c;
 	--gray-border: linear-gradient(0deg, rgba(157,166,188,255) 0%, rgba(195,200,212,255) 50%, rgba(226,234,243,1) 100%);
 	--gray-dots: #a9b1c4;
+	--gray-dots-shadow: #7b8aa3;
 	--gray-moon-background: #d3d9e2;
 	/** general **/
 	--white: #fff;
+	--transparent-white: rgba(255, 255, 255, 0.3);
 	--light-blue: #d6ecfc;
 	--shadow: rgba(0, 0, 0, 0.4);
 }
@@ -127,33 +129,35 @@ body {
 		transition: all 250ms ease-in;
 		width: 120px;
 		height: 120px;
-		top: -10%;
+		top: -8%;
 		position: absolute;
 		border-radius: 50%;
 		background: var(--light-blue);
-		opacity: 0.2;
+		opacity: 0.4;
 		z-index: 1;
 		&:before{
 			content: "";
 			transition: all 250ms ease-in;
 			width: 120px;
-			height: 120px;
+			height: 140px;
 			left: 20%;
+			top: -10%;
 			position: absolute;
 			border-radius: 50%;
 			background: var(--light-blue);
-			opacity: 0.5;
+			opacity: 0.4;
 		}
 		&:after{
 			content: "";
 			transition: all 250ms ease-in;
 			width: 120px;
-			height: 120px;
+			height: 160px;
 			left: 40%;
+			top: -15%;
 			position: absolute;
 			border-radius: 50%;
 			background: var(--light-blue);
-			opacity: 0.5;
+			opacity: 0.4;
 		}
 	}
 	.ornament-container{
@@ -457,22 +461,90 @@ body {
 		}
 	}
 	
-    /* styles for the moon */
-	&:after {
+	.button-spots{
 		transition-delay: 0ms;
 		transition: all 250ms ease-in;
-		position: absolute;
-		content: "";
-		box-shadow: var(--gray-dots) -25px 20px 0 2px, 
-		var(--gray-dots) -5px 10px 0 -2px,
-		var(--gray-dots) 15px 40px 0 -2px;
-		left: 200px;
-		top: 23px;
-		width: 10px;
-		height: 10px;
-		background: transparent;
-		border-radius: 50%;
+		position: relative;
 		opacity: 0;
+		z-index: 3;
+	}
+    /* styles for the moon */
+	.button-circle-spots {
+		position: absolute;
+		width: 50px;
+		height: 50px;
+		&:before {
+			content: "";
+			position: absolute;
+			top: 57%;
+			left: 12%;
+			width: 26px;
+			height: 26px;
+			border-radius: 50px;
+			background: var(--gray-dots-shadow);
+		}
+		&:after {
+			content: "";
+			position: absolute;
+			top: 60%;
+			left: 12%;
+			width: 26px;
+			height: 26px;
+			border-radius: 50px;
+			background: var(--gray-dots);
+		}
+	}
+
+	.button-circle-spots2 {
+		position: absolute;
+		width: 50px;
+		height: 50px;
+		&:before {
+			content: "";
+			position: absolute;
+			top: 29%;
+			left: 66%;
+			width: 12px;
+			height: 12px;
+			border-radius: 50px;
+			background: var(--gray-dots-shadow);
+		}
+		&:after {
+			content: "";
+			position: absolute;
+			top: 30%;
+			left: 66%;
+			width: 12px;
+			height: 12px;
+			border-radius: 50px;
+			background: var(--gray-dots);
+		}
+	}
+
+	.button-circle-spots3 {
+		position: absolute;
+		width: 50px;
+		height: 50px;
+		&:before {
+			content: "";
+			position: absolute;
+			top: 98%;
+			left: 94%;
+			width: 18px;
+			height: 18px;
+			border-radius: 50px;
+			background: var(--gray-dots-shadow);
+		}
+		&:after {
+			content: "";
+			position: absolute;
+			top: 100%;
+			left: 94%;
+			width: 18px;
+			height: 18px;
+			border-radius: 50px;
+			background: var(--gray-dots);
+		}
 	}
 }
 
@@ -503,12 +575,13 @@ body {
 			animation-duration: 350ms;
 			animation-fill-mode: forwards;
 			background: var(--gray-border);
-			margin-left: 4%;
+			margin-left: 3%;
+			padding-left: 2%;
 			&:before{
 				content: "";
 				transition: all 250ms ease-in;
 				background: var(--gray-moon-background);
-				left: -1px;
+				left: 3%;
 			}
 		}
 		.button-circle-radius{
@@ -557,6 +630,10 @@ body {
 				left: -10.5px;
 				border-radius: 50%;
 				background: var(--white);
+				border: 1.5px solid var(--transparent-white);
+				/* https://stackoverflow.com/questions/4062001/can-you-set-a-border-opacity-in-css */
+				-webkit-background-clip: padding-box; /* for Safari */
+    			background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
 
 			}
 			&:after {
@@ -600,15 +677,18 @@ body {
 				width: 3px;
 				height: 3px;
 				top: -56px;
-				left: 60px;
+				left: 55px;
 				border-radius: 50%;
 				background: var(--white);
+				border: 1.5px solid var(--transparent-white);
+				-webkit-background-clip: padding-box; /* for Safari */
+				background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
 
 			}
 			&:after {
-				width: 10px;
-				height: 10px;
-				top: -70px;
+				width: 9px;
+				height: 9px;
+				top: -76px;
 				left: 86px;
 				background: transparent;
 				background-image: url('data:image/svg+xml;charset=UTF-8,<svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M300 1.52588e-05L367.857 172.051C374.12 187.933 377.25 195.874 382.047 202.57C386.297 208.505 391.493 213.702 397.43 217.953C404.127 222.748 412.067 225.88 427.95 232.144L600 300L427.95 367.857C412.067 374.12 404.127 377.25 397.43 382.047C391.493 386.297 386.297 391.493 382.047 397.43C377.25 404.127 374.12 412.067 367.857 427.95L300 600L232.144 427.95C225.88 412.067 222.748 404.127 217.953 397.43C213.702 391.493 208.505 386.297 202.57 382.047C195.874 377.25 187.933 374.12 172.051 367.857L0 300L172.051 232.144C187.933 225.88 195.874 222.748 202.57 217.953C208.505 213.702 213.702 208.505 217.953 202.57C222.748 195.874 225.88 187.933 232.144 172.051L300 1.52588e-05Z" fill="white"/></svg>');
@@ -641,10 +721,9 @@ body {
 				transform: none;
 			}
 		}
-		&:after {
+		.button-spots {
 			transition-delay: 350ms;
 			opacity: 1;
-            z-index: 2;
 		}
 	}
 }
