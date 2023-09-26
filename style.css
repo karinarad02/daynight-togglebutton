@@ -1,19 +1,21 @@
 :root {
-	/** sunny side **/
-	--blue-background: #96dcee;
-	--blue-border: linear-gradient(180deg, rgba(135,172,211,1) 0%, rgba(178,201,227,1) 50%, rgba(226,234,243,1) 100%);
-	--blue-color: #63a5eb;
+	/** day colors **/
+	--blue-outside-background: #e2e8f3;
+	--blue-border: linear-gradient(180deg, rgba(135,172,211,1) 0%, rgba(178,201,227,1) 20%, rgba(254,255,253,255) 100%);
+	--blue-sky-background: #66a8ed;
+	--sun-background: #f6d329;
+	--sun-border: linear-gradient(180deg, rgba(252,252,108,1) 0%, rgba(241,154,1,1) 100%);
 	--cloud-blue: #aed5fa;
-	--yellow-background: #f6d329;
-	--yellow-border: linear-gradient(180deg, rgba(252,252,108,1) 0%, rgba(241,154,1,1) 100%); 
-	/** dark side **/
-	--indigo-background: #384152;
-	--indigo-border: linear-gradient(180deg, rgba(135,172,211,1) 0%, rgba(178,201,227,1) 50%, rgba(226,234,243,1) 100%);
-	--indigo-color: #1c202c;
-	--gray-border: linear-gradient(0deg, rgba(157,166,188,255) 0%, rgba(195,200,212,255) 50%, rgba(226,234,243,1) 100%);
+
+	/** night colors **/
+	--night-outside-background: #384152;
+	--night-border: linear-gradient(180deg, rgba(135,172,211,1) 0%, rgba(178,201,227,1) 50%, rgba(226,234,243,1) 100%);
+	--night-sky-background: #1c202c;
+	--moon-background: #d3d9e2;
+	--moon-border: linear-gradient(0deg, rgba(157,166,188,255) 0%, rgba(195,200,212,255) 50%, rgba(226,234,243,1) 100%);
 	--gray-dots: #a9b1c4;
 	--gray-dots-shadow: #7b8aa3;
-	--gray-moon-background: #d3d9e2;
+
 	/** general **/
 	--white: #fff;
 	--transparent-white: rgba(255, 255, 255, 0.3);
@@ -94,7 +96,7 @@ body {
 		position: absolute;
 		left: 2.5px;
 		top: 2.5px;
-		background: var(--blue-color);
+		background: var(--blue-sky-background);
 		border-radius: 100px;
 	}
     /* styles for the sun */
@@ -109,7 +111,7 @@ body {
 		position: absolute;
 		top: 10%;
 		border-radius: 50%;
-		background: var(--yellow-border);
+		background: var(--sun-border);
         z-index: 2;
 		box-shadow: -1px 10px 10px var(--shadow);
 		&:before{
@@ -121,7 +123,7 @@ body {
 			left: 2px;
 			top: 2px;
 			border-radius: 50%;
-			background: var(--yellow-background);
+			background: var(--sun-background);
 		}
 	}
 	.button-circle-radius{
@@ -554,11 +556,11 @@ body {
 		/* Element can be after our checkbox */
 	}
 	&:checked ~ .screen-background {
-		background: var(--indigo-background);
+		background: var(--night-outside-background);
 	}
 	&:checked + .button-background {
 		width: 255px;
-		background: var(--indigo-border);
+		background: var(--night-border);
 		&:before {
 			content: "";
 			transition: all 250ms ease-in;
@@ -567,20 +569,20 @@ body {
 			position: absolute;
 			left: 2.5px;
 			top: 2.5px;
-			background: var(--indigo-color);
+			background: var(--night-sky-background);
 			border-radius: 100px;
 		}
 		.button-circle {
 			animation-name: switch;
 			animation-duration: 350ms;
 			animation-fill-mode: forwards;
-			background: var(--gray-border);
+			background: var(--moon-border);
 			margin-left: 3%;
 			padding-left: 2%;
 			&:before{
 				content: "";
 				transition: all 250ms ease-in;
-				background: var(--gray-moon-background);
+				background: var(--moon-background);
 				left: 3%;
 			}
 		}
@@ -735,7 +737,7 @@ body {
 	position: absolute;
 	left: 0;
 	top: 0;
-	background: var(--blue-background);
+	background: var(--blue-outside-background);
 	z-index: -2;
 	width: 100%;
 	height: 100%;
